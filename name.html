@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(82, 82, 82);
+        }
+
+        .ln {
+            color: #f08558;
+            font-size: 2.1rem;
+        }
+
+        .la {
+            color: #77a6e4;
+        }
+
+        .lb {
+            color: #f3906b;
+            font-size: 2.2rem;
+        }
+
+        .le1 {
+            color: #57876e;
+            font-size: 2.1rem;
+        }
+
+        .le2 {
+            color: #f08888;
+            font-size: 2.1rem;
+        }
+
+        .ll {
+            color: #226cb1;
+            font-size: 2.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myName" id="myName">
+        <span class="ln">N</span>
+        <span class="la">a</span>
+        <span class="lb">b</span>
+        <span class="le1">e</span>
+        <span class="le2">e</span>
+        <span class="ll">l</span>
+
+        <div id="test">
+
+        </div>
+    </div>
+    <script>
+        // Variable Declarations
+        let n = document.querySelector('.ln');
+        let a = document.querySelector('.la');
+        let b = document.querySelector('.lb');
+        let e1 = document.querySelector('.le1');
+        let e2 = document.querySelector('.le2');
+        let l = document.querySelector('.ll');
+
+        let myName = document.querySelector('#myName');
+        
+        // Function definitions
+
+        // Source https://bit.ly/2neWfJ2 
+        const random_hex = () => {
+            let n = (Math.random() * 0xfffff * 1000000).toString(16);
+            return n.slice(0, 2);
+        };
+
+        const random_num = () => {
+            let randomNumber = (Math.random().toFixed(1)) * 1.7 + 1.2;
+            return randomNumber;
+        }
+
+        const changingFontSize = function(){
+            // Changing font size:
+            n.style.fontSize = random_num() + "rem";
+            a.style.fontSize = random_num() + "rem";
+            b.style.fontSize = random_num() + "rem";
+            e1.style.fontSize = random_num() + "rem";
+            e2.style.fontSize = random_num() + "rem";
+            l.style.fontSize = random_num() + "rem";
+        }
+
+        // The code:
+
+        changingFontSize();
+        console.log(random_num());
+
+        myName.addEventListener("mouseover", function () {
+            // Changing color:
+            n.style.color = "#f" + random_hex() + "558";
+            a.style.color = "#77a6" + random_hex();
+            b.style.color = "#f" + random_hex() + "06b";
+            e1.style.color = "#578" + random_hex() + "e";
+            e2.style.color = "#f085" + random_hex();
+            l.style.color = "#2" + random_hex() + "cb1";
+        });
+
+        myName.addEventListener("click", function(){
+            changingFontSize();
+        });
+
+        
+    </script>
+</body>
+
+</html>
